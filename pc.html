@@ -124,7 +124,37 @@
     }
   }
 
-  function showGoUrl(roomname) {
+  function showGoUrlL(roomname) {
+    const urlSpan = document.getElementById('oculus_url');
+    const currentUrl = window.location.href;
+    const pos = currentUrl.lastIndexOf('/');
+    const goUrl = currentUrl.substr(0, pos + 1) + 'go.html?room=' + roomname;
+    const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
+    urlSpan.innerHTML = a;
+
+    const jupmSpan = document.getElementById('jumb_page');
+    const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
+    let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
+    str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
+    jupmSpan.innerHTML = str;
+  }
+ 
+ function showGoUrlC(roomname) {
+    const urlSpan = document.getElementById('oculus_url');
+    const currentUrl = window.location.href;
+    const pos = currentUrl.lastIndexOf('/');
+    const goUrl = currentUrl.substr(0, pos + 1) + 'go.html?room=' + roomname;
+    const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
+    urlSpan.innerHTML = a;
+
+    const jupmSpan = document.getElementById('jumb_page');
+    const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
+    let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
+    str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
+    jupmSpan.innerHTML = str;
+  }
+ 
+ function showGoUrlR(roomname) {
     const urlSpan = document.getElementById('oculus_url');
     const currentUrl = window.location.href;
     const pos = currentUrl.lastIndexOf('/');
@@ -158,7 +188,9 @@
       meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
-        showGoUrl(roomName);
+        showGoUrlL(roomName);
+        showGoUrlC(roomName);
+        showGoUrlR(roomName);
         updateButtons();
       });
       meshRoom.on('stream', function(stream) {
