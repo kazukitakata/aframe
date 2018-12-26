@@ -46,7 +46,9 @@
     <video id="local_video" autoplay style="width: 320px; height: 180px; border: 1px solid black;"></video>
   </div>
   Please connect with Oculus Go Browser: <span id="oculus_url"></span><br /><br />
-  <span id="jumb_page"></span>
+  <span id="jumb_pageL"></span>
+  <span id="jumb_pageC"></span>
+  <span id="jumb_pageR"></span>
   <div id="container">
   </div>
   <!--
@@ -132,7 +134,7 @@
     const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
     urlSpan.innerHTML = a;
 
-    const jupmSpan = document.getElementById('jumb_page');
+    const jupmSpan = document.getElementById('jumb_pageL');
     const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
     let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
     str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
@@ -147,7 +149,7 @@
     const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
     urlSpan.innerHTML = a;
 
-    const jupmSpan = document.getElementById('jumb_page');
+    const jupmSpan = document.getElementById('jumb_pageC');
     const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
     let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
     str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
@@ -162,7 +164,7 @@
     const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
     urlSpan.innerHTML = a;
 
-    const jupmSpan = document.getElementById('jumb_page');
+    const jupmSpan = document.getElementById('jumb_pageR');
     const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
     let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
     str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
