@@ -33,7 +33,7 @@ WebRTCを利用した360リアルタイム動画通信です。下記の製品�
 
 #### 配信側
 * PC に RICOH THETA V をUSBで接続、Liveモードに設定
-* PCのChromeブラウザで、 [https://kazukitakata.github.io/aframe/pc.html](https://mganeko.github.io/aframe/pc.html) を開く
+* PCのChromeブラウザで、 [https://kazukitakata.github.io/aframe/pc.html](https://kazukitakata.github.io/aframe/pc.html) を開く
   * Roomがランダムに割り振られます。変更することも可能です
 * [Get Devices]ボタンをクリックすると、利用可能な Videoデバイス(カメラ)、Audioデバイス(マイク)のリストを取得します
   * カメラ、マイクへのアクセスを聞かれるので、許可してください
