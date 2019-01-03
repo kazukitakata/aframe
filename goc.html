@@ -189,7 +189,12 @@
       if(event.shiftKey == true){
         var camera = document.getElementById('camera');
         var rotationOfCamera = camera.getAttribute('rotation');
-        camera.setAttribute('rotation', {x: 0, y: 150, z: 0});
+        camera.setAttribute('rotation', {x: 0, y: 106, z: 0});
+      }
+      if(event.ctrlKey == true){
+        var camera = document.getElementById('camera');
+        var rotationOfCamera = camera.getAttribute('rotation');
+        camera.setAttribute('rotation', {x: 0, y: 254, z: 0});
       }
     }
   </script>
