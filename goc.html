@@ -186,12 +186,17 @@
   <script type="text/javascript">
     document.onkeydown = keydown;
     function keydown(){
-      if(event.shiftKey == true){
+      if(event.keyCode == 76){
         var camera = document.getElementById('camera');
         var rotationOfCamera = camera.getAttribute('rotation');
         camera.setAttribute('rotation', {x: 0, y: 106, z: 0});
       }
-      if(event.ctrlKey == true){
+      if(event.keyCode == 67{
+        var camera = document.getElementById('camera');
+        var rotationOfCamera = camera.getAttribute('rotation');
+        camera.setAttribute('rotation', {x: 0, y: 254, z: 0});
+      }
+      if(event.keyCode == 82){
         var camera = document.getElementById('camera');
         var rotationOfCamera = camera.getAttribute('rotation');
         camera.setAttribute('rotation', {x: 0, y: 254, z: 0});
