@@ -158,7 +158,7 @@
       meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
-        showGoUrlC(roomName);
+        showGoUrl(roomName);
         updateButtons();
       });
       meshRoom.on('stream', function(stream) {
