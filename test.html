@@ -1,14 +1,25 @@
-<html>
+<html><head><title>カウント</title></head>
 <body>
+<h1>カウント</h1>
+
+<%!
+int count = 0;
+%>
+
+<%
+int localcount = 0;
+
+count++;
+localcount++;
+%>
+
 <p>
-<script type='text/javascript'>
-var i = 0;
-document.write( 'typeof i: ' + typeof i + '<br>');
-
-i = 'Hello';
-
-document.write( 'typeof i: ' + typeof i + '<br>' );
-</script>
+スクリプトレット内のカウントは<%= localcount %>です。
 </p>
+
+<p>
+変数宣言で作成したカウントは<%= count %>です。
+</p>
+
 </body>
 </html>
