@@ -45,9 +45,7 @@
   <div>
     <video id="local_video" autoplay style="width: 320px; height: 180px; border: 1px solid black;"></video>
   </div>
-  Please connect with Oculus Go Browser L : <span id="oculus_url_L"></span><br /><br />
   Please connect with Oculus Go Browser C : <span id="oculus_url_C"></span><br /><br />
-  Please connect with Oculus Go Browser R : <span id="oculus_url_R"></span><br /><br />
   <span id="jumb_page"></span>
   <div id="container">
   </div>
@@ -125,42 +123,12 @@
       document.getElementById('roomname_text').value = results[1];
     }
   }
-
-  function showGoUrlL(roomname) {
-    const urlSpan = document.getElementById('oculus_url_L');
-    const currentUrl = window.location.href;
-    const pos = currentUrl.lastIndexOf('/');
-    const goUrl = currentUrl.substr(0, pos + 1) + 'gol.html?room=' + roomname;
-    const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
-    urlSpan.innerHTML = a;
-
-    const jupmSpan = document.getElementById('jumb_page');
-    const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
-    let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
-    str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
-    jupmSpan.innerHTML = str;
-  }
  
- function showGoUrlC(roomname) {
+ function showGoUrl(roomname) {
     const urlSpan = document.getElementById('oculus_url_C');
     const currentUrl = window.location.href;
     const pos = currentUrl.lastIndexOf('/');
     const goUrl = currentUrl.substr(0, pos + 1) + 'goc.html?room=' + roomname;
-    const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
-    urlSpan.innerHTML = a;
-
-    const jupmSpan = document.getElementById('jumb_page');
-    const jumpUrl = currentUrl.substr(0, pos + 1) + 'g.html';
-    let str = 'Or, please open ' + '<a target="_blank" href="' + jumpUrl + '">' + jumpUrl + '</a>';
-    str = str + ' with Oculus Go Browser and type room: "' + roomname + '" , then submit.';
-    jupmSpan.innerHTML = str;
-  }
- 
- function showGoUrlR(roomname) {
-    const urlSpan = document.getElementById('oculus_url_R');
-    const currentUrl = window.location.href;
-    const pos = currentUrl.lastIndexOf('/');
-    const goUrl = currentUrl.substr(0, pos + 1) + 'gor.html?room=' + roomname;
     const a = '<a target="_blank" href="' + goUrl + '">' + goUrl + '</a>';
     urlSpan.innerHTML = a;
 
@@ -190,9 +158,7 @@
       meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
-        //showGoUrlL(roomName);
         showGoUrlC(roomName);
-        //showGoUrlR(roomName);
         updateButtons();
       });
       meshRoom.on('stream', function(stream) {
